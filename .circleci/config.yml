@@ -1,12 +1,14 @@
 version: 2.1
 
-# Check out orbs later
-orbs:
-  python: circleci/python@0.2.1
+# # Check out orbs later
+# orbs:
+#   python: circleci/python@0.2.1
 
 jobs:
   build-and-test:
-    executor: python/default
+    docker:
+      - image: circleci/python:3.7.4
+    # executor: python/default
     steps:
       - checkout
       # - python/load-cache
